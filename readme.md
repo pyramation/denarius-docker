@@ -88,3 +88,42 @@ DKhWkqMvpWBEL4D9RNtLxMvKDgCh8d32uN
 ```sh
 ./denariusd dumpprivkey DKhWkqMvpWBEL4D9RNtLxMvKDgCh8d32uN
 ```
+
+### importing your paper wallet (or from private key)
+
+```sh
+./denariusd importprivkey <yourSuperPrivateKey> <label>
+```
+
+## Trouble Shooting
+
+If you are not sure if something is working, maybe you haven't fully sync'd with the network. A tip is to look at your data dir and also you can tail the log to see if it's pulling down the blockchain:
+
+You can check the size of the `blk0001.dat` and the `txleveldb` as they grow:
+
+```
+root at 955f6129828c in /denarius/src on master*
+$ du -sh ~/.denarius/*
+6.7M	/root/.denarius/blk0001.dat
+10M	/root/.denarius/database
+0	/root/.denarius/db.log
+3.9M	/root/.denarius/debug.log
+4.0K	/root/.denarius/denarius.conf
+60K	/root/.denarius/peers.dat
+4.0K	/root/.denarius/smsg.ini
+400K	/root/.denarius/smsgDB
+8.3M	/root/.denarius/txleveldb
+68K	/root/.denarius/wallet.dat
+```
+
+Also `tail -f debug.log` will show you that it's downloading the blockchain:
+
+```
+received block 0000000006b0f74936f7
+SetBestChain: new best=0000000006b0f74936f7  height=24753  trust=3701284023190831  blocktrust=130970706072  date=06/28/17 06:42:16
+ProcessBlock: ACCEPTED
+received block 00000000047778b35e39
+SetBestChain: new best=00000000047778b35e39  height=24754  trust=3701519770547460  blocktrust=235747356629  date=06/28/17 06:43:20
+ProcessBlock: ACCEPTED
+received block 0000000005cbcd418b1d
+```
