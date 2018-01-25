@@ -4,8 +4,24 @@ This image provides `denariusd` via docker while mounting a local folder for the
 
 ## usage
 
-First build the image, by running `make`, then run the container
+### build the image
 
 ```sh
-docker run -v /denarius-data:/home/denarius/.denarius -w /home/denarius/src -i -t pyramation/denarius bash
+make
 ```
+
+### run it
+
+```sh
+make run
+```
+
+or if you want to use `docker` manually:
+
+```sh
+docker run -v `pwd`/denarius-data:/root/.denarius -w /denarius/src -i -t pyramation/denarius bash
+```
+
+### managing your wallet
+
+The data directory will end up on your host machine in a folder called `denarius-data`
