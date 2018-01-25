@@ -57,3 +57,24 @@ docker exec -ti d173377e3757 /bin/bash
 ### managing your wallet
 
 The data directory will end up on your host machine in a folder called `denarius-data`
+
+# helpful tips
+
+### encrypt your wallet
+
+```sh
+$ ./denariusd encryptwallet <superstrongpassword>
+```
+
+### get your address
+
+```sh
+$ ./denariusd getaccountaddress 0
+DKhWkqMvpWBEL4D9RNtLxMvKDgCh8d32uN
+```
+
+### (carefully) get your private key
+
+```sh
+./denariusd dumpprivkey DKhWkqMvpWBEL4D9RNtLxMvKDgCh8d32uN
+```
