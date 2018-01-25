@@ -48,7 +48,7 @@ Now jump inside with the `exec` command:
 docker exec -ti d173377e3757 /bin/bash
 ```
 
-### running `denariusd` commands
+### now, run `denariusd` commands
 
 ```sh
 ./denariusd help
