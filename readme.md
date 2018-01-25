@@ -29,12 +29,22 @@ cd /denarius/src
 ./denariusd
 ```
 
-it will give you a prompt to edit the `denarius.conf` in the data dir. Copy and paste the credentials it gives you.
+It will give you a prompt to edit the `denarius.conf` in the data dir. Copy and paste the credentials it gives you. Edit `denarius-data/denarius.conf`, or if you're inside the docker container, you can edit `/root/.denarius/denarius.conf` using `vim`:
 
+```sh
+rpcuser=denariusrpc
+rpcpassword=<somelongpassword>
+```
 
-### open another shell
+### now you'll need to restart `denariusd`
 
-Now, `ssh` into the existing container. You can get the container id like so
+```sh
+./denarius
+```
+
+### now, open another shell
+
+Leaving that other shell running, `ssh` into the existing container. You can get the container id like so
 
 ```sh
 $ docker ps
