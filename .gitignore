@@ -1,0 +1,5 @@
+*.sw[op]
+*~
+*.DS_Store
+*.log
+denarius-data
